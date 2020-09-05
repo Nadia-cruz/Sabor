@@ -28,6 +28,20 @@ http://www.templatemo.com/tm-507-victory
 
 <body>
     <div class="header">
+        <style>
+            .cook-content {
+               
+                height: 300px;
+                
+            }
+
+            .contact-content {
+                width: 300px;
+                height: 155px;
+                margin-top: 45px;
+            }
+        </style>
+
         <div class="container" align="margin-left">
             <a class="nav-brand" href="#"><img src="img/logo2.png" alt="" width="110"></a>
             <nav class="navbar navbar-inverse" role="navigation">
@@ -86,15 +100,11 @@ http://www.templatemo.com/tm-507-victory
                 </div>
                 <div class="col-md-4">
                     <div class="cook-content">
-                        <h4>Contacto</h4>
+                        
                         <div class="contact-content">
+                            <h4>Contacto</h4>
                             <span>Tefefona-nos:</span>
                             <h6>+ 2303030</h6>
-                        </div>
-                        <span>ou</span>
-                        <div class="primary-white-button">
-                          <li><a href="views/login.php">Login</a></li>
-
                         </div>
                     </div>
                 </div>
