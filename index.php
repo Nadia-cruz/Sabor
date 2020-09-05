@@ -24,15 +24,10 @@ http://www.templatemo.com/tm-507-victory
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
 
-<body>
-    <div class="header">
         <style>
             .cook-content {
-               
-                height: 300px;
-                
+                height: 300px; 
             }
 
             .contact-content {
@@ -40,8 +35,16 @@ http://www.templatemo.com/tm-507-victory
                 height: 155px;
                 margin-top: 45px;
             }
-        </style>
 
+            #serviceItem {
+                margin-top: 80px;
+                margin-bottom: -80px;
+            }
+        </style>
+    </head>
+
+<body>
+    <div class="header">
         <div class="container" align="margin-left">
             <a class="nav-brand" href="#"><img src="img/logo2.png" alt="" width="110"></a>
             <nav class="navbar navbar-inverse" role="navigation">
@@ -88,7 +91,35 @@ http://www.templatemo.com/tm-507-victory
         </div>
     </section>
 
+    <section class="services">
+        <div class="container">
+            <div class="row">
+                <?php 
+                    include("managers/basedados.php");
+                    include("managers/man_menu.php");
 
+                    $bd = new BD();
+    				$link = $bd->abreLigacao();
+    				$menu = new Menu();
+                    $categorias = $menu->getCategorias($link);
+    										
+                    foreach ($categorias as $categoria) {
+                ?>
+                <div class="col-md-3" id="serviceItem">
+                    <div class="service-item">
+                        <a href="<?php echo strtolower($categoria)?>.php">
+                        <img src="img/cook_breakfast.png" alt="">
+                        <h4><?php echo $categoria; ?></h4>
+                        </a>
+                    </div>
+                </div>
+                <?php 
+                    } 
+                    $bd->fechaLigacao($link); 
+                ?> 
+            </div>
+        </div>
+    </section>
 
     <section class="cook-delecious">
         <div class="container">
@@ -117,99 +148,6 @@ http://www.templatemo.com/tm-507-victory
         </div>
     </section>
 
-
-
-    <section class="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="menu.html">
-                        <img src="img/cook_breakfast.png" alt="Breakfast">
-                        <h4>Breakfast</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="menu.html">
-                        <img src="img/cook_lunch.png" alt="Lunch">
-                        <h4>Lunch</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="menu.html">
-                        <img src="img/cook_dinner.png" alt="Dinner">
-                        <h4>Dinner</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="menu.html">
-                        <img src="img/cook_dessert.png" alt="Desserts">
-                        <h4>Desserts</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-   
-    <section class="featured-food">
-        <div class="container">
-            <div class="row">
-                <div class="heading">
-                    <h2>Weekly Featured Food</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="food-item">
-                        <h2>Breakfast</h2>
-                        <img src="img/breakfast_item.jpg" alt="">
-                        <div class="price">$4.50</div>
-                        <div class="text-content">
-                            <h4>Kale Chips Art Party</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="food-item">
-                        <h2>Lunch</h2>
-                        <img src="img/lunch_item.jpg" alt="">
-                        <div class="price">$7.50</div>
-                        <div class="text-content">
-                            <h4>Taiyaki Gastro Tousled</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="food-item">
-                        <h2>Dinner</h2>
-                        <img src="img/dinner_item.jpg" alt="">
-                        <div class="price">$12.50</div>
-                        <div class="text-content">
-                            <h4>Batch Squid Jean Shorts</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
     <footer>
         <div class="container">
             <div class="row">
@@ -232,54 +170,5 @@ http://www.templatemo.com/tm-507-victory
         </div>
     </footer>
 
-
-    
-
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-    <script src="js/vendor/bootstrap.min.js"></script>
-
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        // navigation click actions 
-        $('.scroll-link').on('click', function(event){
-            event.preventDefault();
-            var sectionID = $(this).attr("data-id");
-            scrollToID('#' + sectionID, 750);
-        });
-        // scroll to top action
-        $('.scroll-top').on('click', function(event) {
-            event.preventDefault();
-            $('html, body').animate({scrollTop:0}, 'slow');         
-        });
-        // mobile nav toggle
-        $('#nav-toggle').on('click', function (event) {
-            event.preventDefault();
-            $('#main-nav').toggleClass("open");
-        });
-    });
-    // scroll function
-    function scrollToID(id, speed){
-        var offSet = 0;
-        var targetOffset = $(id).offset().top - offSet;
-        var mainNav = $('#main-nav');
-        $('html,body').animate({scrollTop:targetOffset}, speed);
-        if (mainNav.hasClass("open")) {
-            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-            mainNav.removeClass("open");
-        }
-    }
-    if (typeof console === "undefined") {
-        console = {
-            log: function() { }
-        };
-    }
-    </script>
 </body>
 </html>

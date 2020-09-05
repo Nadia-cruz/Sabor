@@ -82,6 +82,20 @@ class Menu {
         return [];
 	}
 
+	function listMenuFromCategoria($link, $categoria) {
+		$query = "SELECT nome, preco, descricao, imagem, categoria FROM menu WHERE categoria='$categoria'";
+		$result = mysqli_query($link, $query) or die("Não foi possivel listar menu a partir da categoria '$categoria'");
+
+		if (mysqli_num_rows($result) > 0) {
+        	while ($row = mysqli_fetch_object($result)) {
+        		$menu[] = $row;
+        	}
+        	mysqli_free_result($result);
+        	return $menu;
+		} 
+
+        return [];
+	}
 
 	function getMenu($link, $id) {
 		$query = "SELECT  nome, preco, descricao, imagem,  categoria   FROM menu WHERE idmenu='$id'";
