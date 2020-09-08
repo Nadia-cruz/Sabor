@@ -1,4 +1,13 @@
-<?php require('header.php'); ?>
+<?php
+    // session_start();
+
+    // if (!isset($_SESSION['idutilizador'])) {
+    //     require('../indexHeader.php');
+    // } else {
+        require('header.php');
+    //}
+
+?>
 
 <section class="featured-food">
         <div class="container">
@@ -10,7 +19,13 @@
                     $bd = new BD();                       
                     $link = $bd->abreLigacao();
                     $menu = new Menu();
-                    $menu_list = $menu->listAllMenu($link);
+
+                    if (isset($_GET['categoria'])) {
+                        $filtrarCategoria = $_GET['categoria'];
+                        $menu_list = $menu->listMenuFromCategoria($link, $filtrarCategoria);
+                    } else {
+                        $menu_list = $menu->listAllMenu($link);
+                    }
 
                     $directory = "../img/upload/";
                               

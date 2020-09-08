@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,7 +39,6 @@ http://www.templatemo.com/tm-507-victory
 
             #rowItem {
                 margin-top: 30px;
-                
             }
         </style>
     </head>
@@ -49,7 +46,7 @@ http://www.templatemo.com/tm-507-victory
 <body>
     <div class="header">
         <div class="container">
-           <a class="nav-brand" href="home.php"><img src="../img/logo2.png" alt="" width="110"></a>
+            <a class="nav-brand" href="home.php"><img src="../img/logo2.png" alt="" width="110"></a>
             <nav class="navbar navbar-inverse" role="navigation">
                 <div class="navbar-header">
                     <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
