@@ -64,7 +64,6 @@ http://www.templatemo.com/tm-507-victory
                     <ul class="nav navbar-nav">
                         <li><a href="adicionarmeu.php"<?php if($tipo_session == 'Cliente') echo 'hidden'; ?>>Adicionar Menu</a></li>
                         <li><a href="#"<?php if($tipo_session == '2') echo 'hidden'; ?>>Lista de pedidos</a></li>
-                        <li><a href="menu.php">Menus</a></li>
                         <li><a href="test.php"<?php if($tipo_session == 'admin') echo 'hidden'; ?>>Meus pedidos</a></li>
                         <li><a href="pedido.php"<?php if($tipo_session == 'admin') echo 'hidden'; ?>>Efetuar pedidos</a></li>
                         <li><a href="../managers/logout.php">Sair</a></li>

@@ -59,7 +59,7 @@ http://www.templatemo.com/tm-507-victory
                 <!--/.navbar-header-->
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="menu.php"> Menus</a></li>
+                        <li><a href="views/menu.php"> Menus</a></li>
                         <li><a href="views/register.php">Registar-se</a></li>
                         <li><a href="views/login.php">Entrar</a></li>
                        <li><a href="../carrinho.php"><i class="fa fa-shopping-cart" style="font-size:24px"><span><?php echo $cart_count; ?></i></span></a></li>
@@ -107,7 +107,7 @@ http://www.templatemo.com/tm-507-victory
                 ?>
                 <div class="col-md-3" id="serviceItem">
                     <div class="service-item">
-                        <a href="<?php echo strtolower($categoria)?>.php">
+                        <a href="views/<?php echo strtolower($categoria)?>.php">
                         <img src="img/cook_breakfast.png" alt="">
                         <h4><?php echo $categoria; ?></h4>
                         </a>

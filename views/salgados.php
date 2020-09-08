@@ -81,7 +81,8 @@ http://www.templatemo.com/tm-507-victory
                     $bd = new BD();                       
                     $link = $bd->abreLigacao();
                     $menu = new Menu();
-                   
+                    $categoria = $_GET['categoria'];
+                    $menu_list = $menu->listMenuFromCategoria($link, $categoria);
 
                     $directory = "../img/upload/";
                               
