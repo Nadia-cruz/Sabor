@@ -60,8 +60,7 @@ http://www.templatemo.com/tm-507-victory
                 <!--/.navbar-header-->
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="register.php">Registar-se</a></li>
-                        <li><a href="login.php">Entrar</a></li>
+                      <li><a href="menu.php">Menus</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
@@ -74,21 +73,16 @@ http://www.templatemo.com/tm-507-victory
 
     <section class="featured-food">
         <div class="container">
-            <div id="rowContainer">
-                <?php 
+            <div class="rowContainer">
+            <?php 
                     include("../managers/basedados.php");
                     include("../managers/man_menu.php");
 
                     $bd = new BD();                       
                     $link = $bd->abreLigacao();
                     $menu = new Menu();
-
-                    if (isset($_GET['categoria'])) {
-                        $filtrarCategoria = $_GET['categoria'];
-                        $menu_list = $menu->listMenuFromCategoria($link, $filtrarCategoria);
-                    } else {
-                        $menu_list = $menu->listAllMenu($link);
-                    }
+                    $categoria = $_GET['categoria'];
+                    $menu_list = $menu->listMenuFromCategoria($link, $categoria);
 
                     $directory = "../img/upload/";
                               
@@ -98,7 +92,8 @@ http://www.templatemo.com/tm-507-victory
                             //$image = 'animais.png';
                         } 
                 ?>
-                <div class="col-lg-4" id="rowItem">
+            </div>
+              <div class="col-md-4" id="rowItem">
                     <div class="food-item">
                         <h2><?php echo $item->categoria ?></h2>
                         <img src="<?php echo $directory . $image; ?>" alt="" width="370" height="250">
@@ -107,12 +102,13 @@ http://www.templatemo.com/tm-507-victory
                             <h4><?php echo $item->nome ?></h4>
                             <p><?php echo $item->descricao; ?></p>
                         </div>
-                    </div>
-                </div>
+
                 <?php 
                     } 
                     $bd->fechaLigacao($link); 
                 ?>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
