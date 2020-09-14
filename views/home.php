@@ -1,19 +1,11 @@
 <?php require('header.php'); ?>
 
-
-<?php
-
-   include("../managers/basedados.php");
-   include("../managers/session.php"); 
-
-?>
-
-
 <section class="featured-food">
         <div class="container">
             <div id="rowContainer">
                 <?php 
                    
+                    include("../managers/basedados.php");
                     include("../managers/man_menu.php");
 
                     $bd = new BD();                       

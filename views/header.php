@@ -1,4 +1,6 @@
-
+<?php
+    include("../managers/session.php"); 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -65,10 +67,19 @@ http://www.templatemo.com/tm-507-victory
                 <!--/.navbar-header-->
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="adicionarmeu.php"<?php if($tipo_session == 'Cliente') echo 'hidden'; ?>>Adicionar Menu</a></li>
-                        <li><a href="pedidos-cliente.php"<?php if($tipo_session == '2') echo 'hidden'; ?>>Pedidos</a></li>
+                        <?php 
+                            if ($tipo_session == 'admin') {
+                        ?>
+                        <li><a href="adicionarmeu.php">Adicionar Menu</a></li>
+                        <li><a href="pedidos-cliente.php">Pedidos</a></li>
+                        <?php
+                            } else {
+                        ?>
+                        <li><a href="pedidos-admin.php">Meus pedidos</a></li>
+                        <?php 
+                            }        
+                        ?>
                         <li><a href="dados.php">Dados</a></li>
-                        <li><a href="pedidos-admin.php"<?php if($tipo_session == 'admin') echo 'hidden'; ?>>Meus pedidos</a></li>
                         <li><a href="carrinho.php"><i class="fa fa-shopping-cart" style="font-size:20px"><span></i></a></li>
                         <li><a href="../managers/logout.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size:20px">Sair</i></a></li>
                     </ul>
