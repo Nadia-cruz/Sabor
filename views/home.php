@@ -1,11 +1,13 @@
 <?php require('header.php'); ?>
 
+
 <?php
 
-include("../managers/basedados.php");
-include("../managers/session.php"); 
+   include("../managers/basedados.php");
+   include("../managers/session.php"); 
 
 ?>
+
 
 <section class="featured-food">
         <div class="container">

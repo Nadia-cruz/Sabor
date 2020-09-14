@@ -37,7 +37,7 @@ class Utilizador {
             $result = mysqli_query($link, $query) or die ("Query falhou: Não foi possivel criar um novo usuário");
 
             $_SESSION['idutilizador'] = mysqli_insert_id($link);
-           
+            $_SESSION['tipo'] = $_POST['tipo'];
         
             return true;
         }     
@@ -62,51 +62,53 @@ class Utilizador {
             return false;
         }
     }
-    /* function getutilizador($link, $idutilizador) {
-        $query = "SELECT username, nome, telefone, endereco, email  FROM utilizador WHERE idutilizador='$idutilizador'";
-		$result = mysqli_query($link, $query) or die ("Query falhou: login");
-
-		if (mysqli_num_rows($result) > 0) {
-        	$anuncio  = mysqli_fetch_object($result);
-        	mysqli_free_result($result);
-        	return $anuncio;
-        } 
-        return NULL;
-    }*/
-
-      
-   /* function alteraFormQueryUtilizador($link) {
+    
+    function alteraFormQueryUtilizador($link) {
         // Validar Formulário:
 
-        if (strlen($_POST['Nome']) < 3)
+        if (strlen($_POST['nome']) < 3)
             print "Please fill in the Name field<br/><br/><input type='button' value='Voltar' Onclick='Javascript:history.back()'>";
         else if (strlen($_POST['Login']) < 3)
             print "Please fill in the Login field<br/><br/><input type='button' value='Voltar' Onclick='Javascript:history.back()'>";
-        else if (strlen($_POST['Password']) < 3)
+        else if (strlen($_POST['password']) < 3)
             print "Please fill in the Password field<br/><br/><input type='button' value='Voltar' Onclick='Javascript:history.back()'>";
-        else if ($_POST['Password'] != $_POST['confirmacaoPassword'])
+        else if ($_POST['password'] != $_POST['confirmacaoPassword'])
             print "Passwords do not match<br/><br/><input type='button' value='Voltar' Onclick='Javascript:history.back()'>";
-        else if (!filter_var($_POST["Email"], FILTER_VALIDATE_EMAIL))
+        else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
             print "Please enter a valid email address<br/><br/><input type='button' value='Voltar' Onclick='Javascript:history.back()'>";
-        else if (strlen($_POST['Telefone']) < 3)
+        else if (strlen($_POST['telefone']) < 3)
             print "Please fill in the Phone field<br/><br/><input type='button' value='Voltar' Onclick='Javascript:history.back()'>";
         else if (strlen($_POST['endereco']) < 9)
             print "Please fill in the endereco field<br/><br/><input type='button' value='Voltar' Onclick='Javascript:history.back()'>";
         else {
             // md5($_POST['Password'])
-            /* Fazendoa query SQL 
-            $query = "update utilizador set nome='" . $_POST['Nome'] . "',username='" . $_POST['Login'] 
-            . "',password='" . $_POST['Password'] . "',email='" . $_POST['Email'] 
-            . "',telefone='" . $_POST['Telefone'] . "',endereco'" . $_POST['Endereco'] 
-            . "' where idUtilizador=" . $_SESSION['idUtilizador'] . ";";
+            /* Fazendoa query SQL */
+           
+            $query = "UPDATE utilizador SET nome='" . $_POST['nome'] . "', telefone='" . $_POST['telefone'] . "', email='" . $_POST['email'] . "', endereco='" . $_POST['endereco'] . "', password='" . $_POST['password'] . "', username='" . $_POST['Login'] . "' WHERE Idutilizador=" . $_SESSION['idutilizador'] . "";
 
             $result = mysqli_query($link, $query) or die(mysqli_error($link) . "Query falhou: alteraFormQueryUtilizador");
             print("Changed Data.<br/>");
-            /* Fechandoa conexão 
+            /* Fechandoa conexão */ 
             return $result;
         }
         return false;
-    }*/
+    }
+
+
+     function getUtilizador($link, $idutilizador) {
+        $query = "SELECT username, nome, telefone, endereco, email  FROM utilizador WHERE idutilizador='$idutilizador'";
+		$result = mysqli_query($link, $query) or die ("Query falhou: login");
+
+		if (mysqli_num_rows($result) > 0) {
+        	$menu  = mysqli_fetch_object($result);
+        	mysqli_free_result($result);
+        	return $menu;
+        } 
+        return NULL;
+    }
+
+      
+ 
 
     //put your code here
     /*function listarUtilizador($link) {

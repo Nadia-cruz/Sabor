@@ -62,7 +62,7 @@ http://www.templatemo.com/tm-507-victory
                         <li><a href="views/menu.php"> Menus</a></li>
                         <li><a href="views/register.php">Registar-se</a></li>
                         <li><a href="views/login.php">Entrar</a></li>
-                       <li><a href="../carrinho.php"><i class="fa fa-shopping-cart" style="font-size:24px"><span><?php echo $cart_count; ?></i></span></a></li>
+                        <li><a href="views/carrinho.php"><i class="fa fa-shopping-cart" style="font-size:24px"><span><?php echo $cart_count; ?></i></span></a></li>
                         </div>
                     </ul>
                 </div>
@@ -80,11 +80,6 @@ http://www.templatemo.com/tm-507-victory
                 <div class="col-md-6 col-md-offset-3">
                     <h2>Olá! O que queres comer hoje!</h2>
                     <h4>Aqui vais encontra varias comidas deliciosas!!</h4>
-                    
-                    <div class="primary-button">
-                      <li><a href="views/login.php">Login</a></li>
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +101,6 @@ http://www.templatemo.com/tm-507-victory
                 ?>
                 <div class="col-md-3" id="serviceItem">
                     <div class="service-item">
-                    <a href="views/menu.php?categoria=<?php echo $categoria; ?>">
                         <a href="views/menu.php?categoria=<?php echo $categoria; ?>">
                         <img src="img/cook_breakfast.png" alt="">
                         <h4><?php echo $categoria; ?></h4>
@@ -152,7 +146,7 @@ http://www.templatemo.com/tm-507-victory
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <p>Copyright &copy; 2017 Victory Template</p>
+                  <p>Contato &copy; 23030330 </p>
                 </div>
                 <div class="col-md-4">
                     <ul class="social-icons">
@@ -164,7 +158,7 @@ http://www.templatemo.com/tm-507-victory
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <p>Designed by <em>templatemo</em></p>
+                 <p>Sabor de nos Terra <em>Cozinha Cabo-verdiana</em></p>
                 </div>
             </div>
         </div>

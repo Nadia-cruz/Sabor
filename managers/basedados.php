@@ -34,9 +34,9 @@ class BD extends PDO {
 
         $user = 'root';
         $password = 'root';
-        $db = 'db';
+        $db = 'bd';
         $host = 'localhost';
-        $port = 8889;
+        $port = 3306;
 
         $link = mysqli_connect(
             $host,

@@ -1,5 +1,4 @@
 <?php
-    
     session_start();
 
     if (isset($_POST['Validar'])) {
@@ -24,74 +23,81 @@
         $bd->fechaLigacao($link);
     }
 
-    if (isset($_POST['Validar2'])) {
-        include("../managers/basedados.php");
-        include("../managers/utilizador.php");
-
-        $bd = new BD();
-        $link = $bd->abreLigacao();
-
-        $utilizador = new Utilizador();
-
-        if ($utilizador->inserirUtilizador($link)) {
-            // $_SESSION['Login'] = filter_var($_POST['Login'], FILTER_SANITIZE_STRING);
-            header("location: home.php");
-        } else {
-            print ("<div class='alert alert-danger'>
-                      <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                      <strong>Erro de autenticação!</strong> Verifique se os dados estão corretos.
-                      </div>");
-        }
-
-        $bd->fechaLigacao($link);
-    }
-
 ?>
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>Sabor de nos terra - Login</title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <meta name="description" content=" sabores da nossa terra ">
-    
-
+    <meta charset="UTF-8">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Sabor de nos Terra</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="css/login.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-
-
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 
+<body>
 
-<!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <!-- Preloader -->
 
-<!-- login start -->
+
+    <div class="container">
+
+        <div class="classynav">
+            <div class="main-header-area">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Classy Menu -->
+                        <nav class="classy-navbar justify-content-between" id="akameNav">
+
+                            <!-- Logo -->
+                            <a class="nav-brand" href="../index.php"><img src="../img/logo2.png" alt="" width="110"></a>
+
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
 
 
-<div class="container-fluid">
+            <div class="row text-center">
 
-    <section class="login-block mt-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 login-sec">
-                <center><div class="rd-navbar-brand"><a title="Ir para Página Inicial" class="brand" href="../index.php"><img src="../img/logo2.png" alt="" width="110"/></a></div></center>
-                   <br> <h5 class="text-center mb-4">Faça seu Login</h5>
-                    
-                    <form method="POST">
-                    
+
+                <aside class="col-sm-4 text-center">
+
+
+                    <center>
+                    <center><div class="rd-navbar-brand"><a title="Ir para Página Inicial" class="brand" href="../index.php"><img src="../img/logo2.png" alt="" width="110"/></a></div></center>
+                        <div class="card">
+                            <article class="card-body" style="align-content: center">
+                                <form method="POST">
+                                    <h2 class="form-title">Entre na sua conta</br></h2>
                                     <div class="form-group">
                                         <input name="username" class="form-control" placeholder="Username" type="text">
                                     </div> <!-- form-group// -->
@@ -100,42 +106,32 @@
                                             type="password">
                                     </div> <!-- form-group// -->
                                     <div class="form-group">
-                                        <button type="submit" name="Validar" class="btn btn-outline-warning"> Login </button>
+                                        <button type="submit" name="Validar" class="akame-btn"> Login </button>
                                     </div> <!-- form-group// -->
                                     <!-- .row// -->
-                    </form>
+                                </form>
 
-                    <div class="copy-text">Não tem conta?
-
-                        <a class="text-primary" href="" data-toggle="modal" data-target="#modal-login">Faça o seu registro!</a>
-                    </div>
-
-                    <div class="text-center p-t-8 p-b-31">
-                        <a class="text-danger" href="" data-toggle="modal" data-target="#modal-rec">
-                           <small> Recuperar password? </small>
-                       </a>
-                   </div>
+                                <p>Não é registrado? <a href="register.php">Cria a sua conta!</a></p>
+                            </article>
+                        </div>
+                    </center>
 
 
-               </div>
-               
-            </div>
-        </div>
+            </div> <!-- card.// -->
+
+            </aside> <!-- col.// -->
+
+
+
+        </div> <!-- row.// -->
+       
 
     </div>
 
-</section>
-
-<!-- login end -->
-
-</div>
+    </div>
+    <!--container end.//-->
 
 </body>
-
-
-
-
-
 
 <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">

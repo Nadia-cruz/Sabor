@@ -1,8 +1,9 @@
 <?php
 
+
     include("../managers/basedados.php");
     include("../managers/man_menu.php");
-    include("../managers/session.php");
+    include("../managers/session.php"); 
 
     if (isset($_POST['Validar'])) {
         

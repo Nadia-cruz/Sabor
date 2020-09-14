@@ -1,12 +1,12 @@
 <?php require('header.php'); ?>
- 
+<?php include('session.php');?> 
  <?php
     
     session_start();
     include_once ('../managers/basedados.php');
     $bd = new BD();
     $link = $bd->abreLigacao();
-    $sql="SELECT * FROM pedido where id";
+    $sql="SELECT * FROM pedido where Idutilizador = " . $_SESSION['idutilizador'];
     $Pedidos=mysqli_stmt_init($link);
 
     if(!mysqli_stmt_prepare($Pedidos,$sql))
@@ -25,17 +25,13 @@
 <div class="container">
 	<div class="row">
                 <section class="content">
-                            <h1>Listar Pedidos</h1>
+                            <h1>Pedidos dos clientes</h1>
                             <div class="col-md-8 col-md-offset-2">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
-                                        <div class="pull-right">
-                                            <div class="search-container">
-                                                <input type="text" placeholder="Search..">
-                                            </div>
-                                        </div>
+                                        
                                         <div class="table-container">
-                                            <table class="table table-filter">
+                                            <table id="pedidos_cliente_table" class="table table-striped table-bordered" style="width:100%">
                                                         <thead class="thead-dark">
                                                             <tr>
                                                                 <th scope="col">Menu</th>
@@ -88,7 +84,7 @@
         
         
             
-<?php require('footer.php'); ?>
+
 
 
 

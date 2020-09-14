@@ -9,7 +9,7 @@ include("../managers/session.php");
 
 
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="pt-br">
+<html class="wide wow-animation" lang="pt">
   <head>
     <title>Sabor de nos terra</title>
     <meta name="format-detection" content="telephone=no">
@@ -20,7 +20,7 @@ include("../managers/session.php");
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500">
@@ -99,137 +99,36 @@ include("../managers/session.php");
                 <h6 class="my-0">Nome do produto</h6>
                 <small class="text-muted">Breve descrição</small>
               </div>
-              <span class="text-muted">R$12</span>
+              <span class="text-muted">12€</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Segundo produto</h6>
                 <small class="text-muted">Breve descrição</small>
               </div>
-              <span class="text-muted">R$8</span>
+              <span class="text-muted">8€</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Terceiro item</h6>
                 <small class="text-muted">Breve descrição</small>
               </div>
-              <span class="text-muted">R$5</span>
+              <span class="text-muted">5€</span>
             </li>
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0">Código de promoção</h6>
                 <small>CODIGOEXEMEPLO</small>
               </div>
-              <span class="text-success">-R$5</span>
+              <span class="text-success">-5€</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (BRL)</span>
-              <strong>R$20</strong>
+              <span>Total</span>
+              <strong>20€</strong>
             </li>
           </ul>
 
-          <form class="card p-2">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Código promocional">
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-secondary">Resgatar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Endereço de cobrança</h4>
-          <form class="needs-validation" novalidate>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="primeiroNome">Nome</label>
-                <input type="text" class="form-control" id="primeiroNome" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  É obrigatório inserir um nome válido.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" class="form-control" id="sobrenome" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  É obrigatório inserir um sobre nome válido.
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="nickname">Nickname</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">@</span>
-                </div>
-                <input type="text" class="form-control" id="nickname" placeholder="Nickname" required>
-                <div class="invalid-feedback" style="width: 100%;">
-                  Seu nickname é obrigatório.
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="email">Email <span class="text-muted">(Opcional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="fulano@exemplo.com">
-              <div class="invalid-feedback">
-                Por favor, insira um endereço de e-mail válido, para atualizações de entrega.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="endereco">Endereço</label>
-              <input type="text" class="form-control" id="endereco" placeholder="Rua dos bobos, nº 0" required>
-              <div class="invalid-feedback">
-                Por favor, insira seu endereço de entrega.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="endereco2">Endereço 2 <span class="text-muted">(Opcional)</span></label>
-              <input type="text" class="form-control" id="endereco2" placeholder="Apartamento ou casa">
-            </div>
-
-            <div class="row">
-              <div class="col-md-5 mb-3">
-                <label for="pais">País</label>
-                <select class="custom-select d-block w-100" id="pais" required>
-                  <option value="">Escolha...</option>
-                  <option>Brasil</option>
-                </select>
-                <div class="invalid-feedback">
-                  Por favor, escolha um país válido.
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <label for="estado">Estado</label>
-                <select class="custom-select d-block w-100" id="estado" required>
-                  <option value="">Escolha...</option>
-                  <option>Acre</option>
-                </select>
-                <div class="invalid-feedback">
-                  Por favor, insira um estado válido.
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="cep">CEP</label>
-                <input type="text" class="form-control" id="cep" placeholder="" required>
-                <div class="invalid-feedback">
-                  É obrigatório inserir um CEP.
-                </div>
-              </div>
-            </div>
-            <hr class="mb-4">
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="mesmo-endereco">
-              <label class="custom-control-label" for="mesmo-endereco">Endereço de entrega é o mesmo que o de cobrança.</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="salvar-info">
-              <label class="custom-control-label" for="salvar-info">Lembrar desta informação, na próxima vez.</label>
-            </div>
-            <hr class="mb-4">
+         
 
             <h4 class="mb-3">Pagamento</h4>
 
