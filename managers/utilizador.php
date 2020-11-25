@@ -83,9 +83,13 @@ class Utilizador {
         else {
             // md5($_POST['Password'])
             /* Fazendoa query SQL */
+
+            //UPDATE `utilizador` SET `Idutilizador`=[value-1],`nome`=[value-2],`telefone`=[value-3],`email`=[value-4],`endereco`=[value-5],`password`=[value-6],`username`=[value-7],`tipo`=[value-8],`estado`=[value-9] WHERE 1
            
             $query = "UPDATE utilizador SET nome='" . $_POST['nome'] . "', telefone='" . $_POST['telefone'] . "', email='" . $_POST['email'] . "', endereco='" . $_POST['endereco'] . "', password='" . $_POST['password'] . "', username='" . $_POST['Login'] . "' WHERE Idutilizador=" . $_SESSION['idutilizador'] . "";
 
+            print($query);
+            
             $result = mysqli_query($link, $query) or die(mysqli_error($link) . "Query falhou: alteraFormQueryUtilizador");
             print("Changed Data.<br/>");
             /* Fechandoa conexão */ 

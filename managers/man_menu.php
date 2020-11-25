@@ -47,6 +47,8 @@ class Menu {
 
 			$query = "INSERT INTO menu (nome, preco, descricao, categoria, imagem, idutilizador) VALUES ('" . $_POST['nome'] . "', " . $_POST['preco'] . ", '" . $_POST['descricao'] . "', '" . $_POST['categoria'] . "', '$novo_nome', '$id')";
 
+			print($query);
+
             $result = mysqli_query($link, $query) or die ('Não foi possivel adicionar um novo menu');
 
             return true;

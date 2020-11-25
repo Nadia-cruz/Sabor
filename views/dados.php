@@ -1,7 +1,8 @@
 <?php
 
-ini_set ( 'display_errors' , 1 ); 
-ini_set ( 'display_startup_errors' , 1 ); 
+    require('header.php');
+    ini_set ( 'display_errors' , 1 ); 
+    ini_set ( 'display_startup_errors' , 1 ); 
 
 	include("../managers/basedados.php");
     include("../managers/utilizador.php");
@@ -27,7 +28,7 @@ ini_set ( 'display_startup_errors' , 1 );
     }
 
 ?>
-<?php require('header.php'); ?>
+
 </div>
 <!--/.header-->
 <section id="book-table">

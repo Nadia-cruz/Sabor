@@ -104,7 +104,7 @@ http://www.templatemo.com/tm-507-victory
 
                             <h2><?php echo $item->categoria ?></h2>
                             <img src="<?php echo $directory . $image; ?>" alt="" width="370" height="250">
-                            <div class="price"><?php echo $item->preco . '€'; ?></div>
+                            <div class="price"><?php echo $item->preco . '$'; ?></div>
                             <div class="text-content">
                                 <h4><?php echo $item->nome ?></h4>
                                 <p><?php echo $item->descricao; ?></p>

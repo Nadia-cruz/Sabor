@@ -109,15 +109,22 @@
 
                         <a class="text-primary" href="" data-toggle="modal" data-target="#modal-login">Faça o seu registro!</a>
                     </div>
+                </div>
+                <div class="col-md-8 banner-sec">   
+                  <div class="signup__overlay"></div>          
+                  <div class="banner">
+                    <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
 
-                    <div class="text-center p-t-8 p-b-31">
-                        <a class="text-danger" href="" data-toggle="modal" data-target="#modal-rec">
-                           <small> Recuperar password? </small>
-                       </a>
-                   </div>
 
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../img/upload/login.jpg" height="100%" width="100%">
 
-               </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                
             </div>
         </div>

@@ -102,7 +102,7 @@ http://www.templatemo.com/tm-507-victory
                 <div class="col-md-3" id="serviceItem">
                     <div class="service-item">
                         <a href="views/menu.php?categoria=<?php echo $categoria; ?>">
-                        <img src="img/cook_breakfast.png" alt="">
+                        <img src="img/comida.png" alt="">
                         <h4><?php echo $categoria; ?></h4>
                         </a>
                     </div>

@@ -1,9 +1,8 @@
 <?php
 
-
+    require('header.php'); 
     include("../managers/basedados.php");
     include("../managers/man_menu.php");
-    
 
     if (isset($_POST['Validar'])) {
         
@@ -24,7 +23,7 @@
     }
 
 ?>
-<?php require('header.php'); ?>
+
 </div>
 <!--/.header-->
 <section id="book-table">
